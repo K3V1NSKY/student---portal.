@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="logo">
+        <span class="logo-icon">🎓</span>
+        <h2>EduPortal</h2>
+      </div>
+      <nav class="nav-menu">
+        <button class="nav-btn active" data-target="dashboard">Dashboard</button>
+        <button class="nav-btn" data-target="schedule">Class Schedule</button>
+        <button class="nav-btn" data-target="grades">Grades</button>
+        <button class="nav-btn" data-target="announcements">Announcements</button>
+        <button class="nav-btn" data-target="profile">Student Profile</button>
+      </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <header class="topbar">
+        <h1 id="page-title">Dashboard</h1>
+        <div class="user-badge">
+          <span id="header-student-name">Alex Rivera</span>
+          <div class="avatar">AR</div>
+        </div>
+      </header>
+
+      <!-- 1. Dashboard Section -->
+      <section id="dashboard" class="content-section active">
+        <div class="stats-grid">
+          <div class="card stat-card">
+            <h3>Current GPA</h3>
+            <p class="stat-value">3.85</p>
+            <span class="stat-sub">Dean's List Standing</span>
+          </div>
+          <div class="card stat-card">
+            <h3>Enrolled Units</h3>
+            <p class="stat-value">18</p>
+            <span class="stat-sub">6 Active Courses</span>
+          </div>
+          <div class="card stat-card">
+            <h3>Attendance</h3>
+            <p class="stat-value">96%</p>
+            <span class="stat-sub">Fall Semester 2026</span>
+          </div>
+        </div>
+
+        <div class="dashboard-split">
+          <div class="card">
+            <h3>Today's Classes</h3>
+            <ul class="simple-list" id="dashboard-classes"></ul>
+          </div>
+          <div class="card">
+            <h3>Recent Announcements</h3>
+            <ul class="simple-list" id="dashboard-announcements"></ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Class Schedule Section -->
+      <section id="schedule" class="content-section">
+        <div class="card">
+          <h3>Weekly Class Schedule</h3>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>Course Code</th>
+                  <th>Subject</th>
+                  <th>Days</th>
+                  <th>Time</th>
+                  <th>Room</th>
+                  <th>Instructor</th>
+                </tr>
+              </thead>
+              <tbody id="schedule-table-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Grades Section -->
+      <section id="grades" class="content-section">
+        <div class="card">
+          <h3>Academic Performance</h3>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>Course Code</th>
+                  <th>Subject</th>
+                  <th>Units</th>
+                  <th>Midterm</th>
+                  <th>Final</th>
+                  <th>Remarks</th>
+                </tr>
+              </thead>
+              <tbody id="grades-table-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Announcements Section -->
+      <section id="announcements" class="content-section">
+        <div id="announcements-list" class="announcements-grid"></div>
+      </section>
+
+      <!-- 5. Student Profile Section -->
+      <section id="profile" class="content-section">
+        <div class="card profile-card">
+          <div class="profile-header">
+            <div class="avatar large">AR</div>
+            <div>
+              <h2 id="profile-name">Alex Rivera</h2>
+              <p class="muted">BS Information Technology • 3rd Year</p>
+            </div>
+          </div>
+          <form id="profile-form" class="profile-form">
+            <div class="form-group">
+              <label for="input-name">Full Name</label>
+              <input type="text" id="input-name" value="Alex Rivera" required>
+            </div>
+            <div class="form-group">
+              <label for="input-id">Student ID</label>
+              <input type="text" id="input-id" value="2024-10482" readonly>
+            </div>
+            <div class="form-group">
+              <label for="input-email">Email Address</label>
+              <input type="email" id="input-email" value="alex.rivera@university.edu" required>
+            </div>
+            <div class="form-group">
+              <label for="input-phone">Contact Number</label>
+              <input type="text" id="input-phone" value="+63 912 345 6789" required>
+            </div>
+            <button type="submit" class="btn-primary">Save Changes</button>
+            <span id="save-status" class="save-status"></span>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
